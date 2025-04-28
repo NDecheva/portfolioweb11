@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерия</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="skills.html">Умения</a></li>
+                <li><a href="hobbies.html">Хоби</a></li>
+                <li><a href="gallery.html">Галерия</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Галерия</h1>
+        <div class="gallery">
+            <img src="img1.jpg" alt="Снимка 1">
+<img src="img2.jpg" alt="Снимка 2">
+<img src="img3.jpg" alt="Снимка 3">
+<img src="img4.jpg" alt="Снимка 4">
+<img src="img5.jpg" alt="Снимка 5">
+<img src="img6.jpg" alt="Снимка 6">
+<img src="img7.jpg" alt="Снимка 7">
+<img src="img8.jpg" alt="Снимка 8">
+<img src="img9.jpg" alt="Снимка 9">
+<img src="img10.jpg" alt="Снимка 10">
+        </div>
+        <div id="lightbox">
+            <img id="lightbox-img" src="">
+        </div>
+        <script>
+            const images = document.querySelectorAll('.gallery img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+
+            images.forEach(img => {
+                img.addEventListener('click', () => {
+                    lightbox.style.display = 'flex';
+                    lightboxImg.src = img.src;
+                });
+            });
+
+            lightbox.addEventListener('click', () => {
+                lightbox.style.display = 'none';
+            });
+        </script>
+    </main>
+</body>
+</html>
